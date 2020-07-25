@@ -8,17 +8,31 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-        title: "lefly",
-        theme: new ThemeData(
-          primaryColor: new Color(0xff075E54),
-          accentColor: new Color(0xff25D366),
+      title: "lefly",
+      home: Scaffold(
+        backgroundColor: Colors.green[100],
+        body: SafeArea(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Card(
+                color: Colors.green,
+                child: ListTile(
+                  leading: Text(
+                    "Search Dustbin",
+                    style: TextStyle(fontSize: 23, fontStyle: FontStyle.italic),
+                  ),
+                  title: Icon(
+                    Icons.delete,
+                    size: 40,
+                    color: Colors.white,
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
-        home: Scaffold(
-          appBar: AppBar(
-              title: Text(
-            "lefly",
-            style: TextStyle(fontWeight: FontWeight.bold),
-          )),
-        ));
+      ),
+    );
   }
 }
