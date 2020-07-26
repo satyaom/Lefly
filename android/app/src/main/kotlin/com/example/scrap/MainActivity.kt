@@ -1,4 +1,4 @@
-package com.example.lyfly
+package com.example.lefly
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity
