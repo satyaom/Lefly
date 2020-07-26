@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'map.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -14,18 +15,21 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Card(
-              color: Colors.green,
-              child: ListTile(
-                leading: Text(
-                  "Search Dustbin",
-                  style: TextStyle(fontSize: 23, fontStyle: FontStyle.italic),
-                ),
-                title: Icon(
-                  Icons.delete,
-                  size: 40,
-                  color: Colors.white,
-                ),
+            FlatButton(
+              onPressed: () {
+                print('hola');
+                Map();
+              },
+              child: Card(
+                child: ListTile(
+                    leading: Text(
+                      "Search Dustbin",
+                      style:
+                          TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                    ),
+                    trailing: Image.asset(
+                      'images/bin-removebg-preview.png',
+                    )),
               ),
             )
           ],
