@@ -1,4 +1,4 @@
-package com.example.scrap
+package com.example.lyfly
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity
