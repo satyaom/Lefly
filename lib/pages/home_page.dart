@@ -17,13 +17,19 @@ class _HomePageState extends State<HomePage> {
           children: <Widget>[
             FlatButton(
               onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Map(),
+                  ),
+                );
                 print('hola');
                 Map();
               },
               child: Card(
                 child: ListTile(
                     leading: Text(
-                      "Search Dustbin",
+                      "Search",
                       style:
                           TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                     ),
