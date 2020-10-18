@@ -10,6 +10,15 @@ class Map extends StatefulWidget {
 class _MapState extends State<Map> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: SafeArea(
+        child: GoogleMap(
+          mobilePreferences: MobileMapPreferences(
+            myLocationEnabled: true,
+            myLocationButtonEnabled: true,
+          ),
+        ),
+      ),
+    );
   }
 }
