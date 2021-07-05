@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "931042754144",
+    "project_id": "envi-1568304950721",
+    "storage_bucket": "envi-1568304950721.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:931042754144:android:a40604c1aade5262d6cd05",
+        "android_client_info": {
+          "package_name": "com.example.lefly"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "931042754144-e20nvp2oth6hqdb56ge20up02dfg121u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMDAy_gzsoINsd8B2PKGfKBpgaoly8gno"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "931042754144-e20nvp2oth6hqdb56ge20up02dfg121u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
