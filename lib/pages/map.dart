@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lefly/model/infoWindow.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:geolocation/geolocation.dart';
 
 class GoogleMapShow extends StatefulWidget {
   @override
@@ -11,6 +12,32 @@ class GoogleMapShow extends StatefulWidget {
 class _GoogleMapShowState extends State<GoogleMapShow> {
   Set<Marker> _marker = {};
   BitmapDescriptor mapMarker;
+
+  double latitude = 00.00000;
+  double longitude = 00.00000;
+
+  _getCurrentLocation() async {
+    Geolocation.enableLocationServices().then((result) {
+      // Request location
+      print(result);
+    }).catchError((e) {
+      // Location Services Enablind Cancelled
+      print(e);
+    });
+
+    Geolocation.currentLocation(accuracy: LocationAccuracy.best)
+        .listen((result) {
+      if (result.isSuccessful) {
+        setState(() {
+          latitude = result.location.latitude;
+          longitude = result.location.longitude;
+        });
+        var data = {"latitude": latitude, "longitude": longitude};
+        FirebaseFirestore.instance.collection('dustbin_location').add(data);
+        print(data);
+      }
+    });
+  }
 
   initMarker(mapId, mapLatLong) {
     print(mapLatLong['latitude']);
@@ -61,6 +88,10 @@ class _GoogleMapShowState extends State<GoogleMapShow> {
         initialCameraPosition: CameraPosition(
             target: LatLng(37.42796133580664, -122.085749655962), zoom: 12),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _getCurrentLocation,
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.miniEndTop,
     );
   }
 }
