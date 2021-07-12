@@ -90,6 +90,7 @@ class _GoogleMapShowState extends State<GoogleMapShow> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _getCurrentLocation,
+        child: Icon(Icons.location_history_outlined),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.miniEndTop,
     );
