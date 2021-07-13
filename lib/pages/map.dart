@@ -3,6 +3,7 @@ import 'package:lefly/model/infoWindow.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:geolocation/geolocation.dart';
+import 'package:lefly/pages/checkImage.dart';
 
 class GoogleMapShow extends StatefulWidget {
   @override
@@ -12,7 +13,6 @@ class GoogleMapShow extends StatefulWidget {
 class _GoogleMapShowState extends State<GoogleMapShow> {
   Set<Marker> _marker = {};
   BitmapDescriptor mapMarker;
-
   double latitude = 00.00000;
   double longitude = 00.00000;
 
@@ -89,7 +89,15 @@ class _GoogleMapShowState extends State<GoogleMapShow> {
             target: LatLng(37.42796133580664, -122.085749655962), zoom: 12),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _getCurrentLocation,
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => CheckImage(),
+            ),
+          );
+          CheckImage();
+        },
         child: Icon(Icons.location_history_outlined),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.miniEndTop,

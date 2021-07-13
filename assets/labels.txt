@@ -1,0 +1,2 @@
+0 dustbin
+1 not dustbin
